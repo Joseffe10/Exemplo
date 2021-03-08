@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -13,9 +14,26 @@
             android:textSize="30sp"
             android:id="@+id/txtTitulo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="guidelineVerticalStart"
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+    />
+
     <Button
             android:text="Sortear"
             android:layout_width="wrap_content"
@@ -23,9 +41,39 @@
             android:id="@+id/btnSortear"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="64dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"/>
+
+    <Button
+            android:text="Próximo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnProximo"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSortear"/>
+
+    <Button
+            android:text="Foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFoto"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumero"/>
+
+    <ImageView
+            android:id="@+id/fotoUsuario"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtNumero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStart"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"/>
     <TextView
             android:text="?"
             android:layout_width="wrap_content"
