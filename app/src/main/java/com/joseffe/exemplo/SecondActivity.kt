@@ -2,6 +2,7 @@ package com.joseffe.exemplo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,8 @@ class SecondActivity : AppCompatActivity() {
 
         val usuario = intent.extras?.get("USUARIO") as Usuario
         val nomeUsuario = usuario.nome
+
+        Toast.makeText(this, nomeUsuario, Toast.LENGTH_LONG).show()
 
     }
 }

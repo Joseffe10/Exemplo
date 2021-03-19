@@ -23,10 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var usuario: ImageView
     private lateinit var progressBar : ProgressBar
 
-    //    val boasVindas: String by lazy {
-//        val texto = "Seja bem vindo!"
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,7 +52,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
             val usuario = Usuario(nome = "Maria", id = 125)
             intent.putExtra("USUARIO", usuario)
-            intent.putExtra("IDADE", 32)
             startActivity(intent)
         }
 
